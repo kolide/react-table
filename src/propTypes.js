@@ -53,6 +53,7 @@ export default {
   // Classes
   className: PropTypes.string,
   style: PropTypes.object,
+  hasMaxWidth: PropTypes.bool,
 
   // Component decorators
   getProps: PropTypes.func,

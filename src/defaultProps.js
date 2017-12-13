@@ -92,6 +92,7 @@ export default {
   // Classes
   className: '',
   style: {},
+  hasMaxWidth: false,
 
   // Component decorators
   getProps: emptyObj,

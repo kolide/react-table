@@ -51,6 +51,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
       children,
       className,
       style,
+      hasMaxWidth,
       getProps,
       getTableProps,
       getTheadGroupProps,
@@ -247,7 +248,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
       }
 
       const flexStyles = {
-        flex: `1 1 ${_.asPx(flex)}`,
+        flex: hasMaxWidth ? `1 1 ${_.asPx(flex)}` : `${flex} 0 auto`,
         width: _.asPx(width),
         maxWidth: _.asPx(maxWidth),
       }
@@ -361,7 +362,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           )}
           style={{
             ...styles,
-            flex: `1 1 ${_.asPx(width)}`,
+            flex: hasMaxWidth ? `1 1 ${_.asPx(width)}` : `${width} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
           }}
@@ -459,7 +460,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           className={classnames(classes)}
           style={{
             ...styles,
-            flex: `1 1 ${_.asPx(width)}`,
+            flex: hasMaxWidth ? `1 1 ${_.asPx(width)}` : `${width} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
           }}
@@ -737,7 +738,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
                   )}
                   style={{
                     ...styles,
-                    flex: `1 1 ${_.asPx(width)}`,
+                    flex: hasMaxWidth ? `1 1 ${_.asPx(width)}` : `${width} 0 auto`,
                     width: _.asPx(width),
                     maxWidth: _.asPx(maxWidth),
                   }}
@@ -803,7 +804,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           className={classnames(classes, !show && 'hidden')}
           style={{
             ...styles,
-            flex: `1 1 ${_.asPx(flex)}`,
+            flex: hasMaxWidth ? `1 1 ${_.asPx(flex)}` : `${flex} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
           }}
@@ -884,7 +885,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           className={classnames(classes, !show && 'hidden')}
           style={{
             ...styles,
-            flex: `1 1 ${_.asPx(width)}`,
+            flex: hasMaxWidth ? `1 1 ${_.asPx(width)}`: `${width} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
           }}
