@@ -964,6 +964,7 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
             className={classnames(
               tableProps.className,
               currentlyResizing ? 'rt-resizing' : '',
+              hasMaxWidth ? 'rt-maxwidth' : '',
             )}
             style={tableProps.style}
             {...tableProps.rest}
